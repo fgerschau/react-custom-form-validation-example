@@ -1,0 +1,38 @@
+.registration-wrapper {
+  flex: 1 0 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 300px;
+
+  h1, input, select {
+    margin: 15px auto;
+    flex: 1 0 100%;
+  }
+
+  select {
+    opacity: 0.8;
+    height: 30px;
+    background-color: #16324f;
+    color: #fff;
+    padding: 5px 15px;
+  }
+
+  input, select {
+    border: none;
+    outline: none;
+  }
+
+  .submit {
+    cursor: pointer;
+    outline: none;
+    flex: 0 0 170px;
+    margin: 15px auto;
+    background-color: #16324f;
+    color: #fff;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}
