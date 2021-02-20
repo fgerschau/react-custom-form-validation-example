@@ -42,7 +42,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^5.0.3",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.1"
   }
 }
