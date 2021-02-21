@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useForm } from './useForm';
+import { useForm } from '../useForm';
 import './Registration.scss';
 
 type Gender = 'male' | 'female' | 'non-binary';
