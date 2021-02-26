@@ -17,7 +17,7 @@ const Registration: FC = () => {
     validations: {
       name: {
         pattern: {
-          value: '/[A-Za-z]*/',
+          value: '^[A-Za-z]*$',
           message:
             "You're not allowed to use special characters or numbers in your name.",
         },
