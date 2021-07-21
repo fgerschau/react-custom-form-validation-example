@@ -15,7 +15,7 @@ interface Validation {
   };
 }
 
-type ErrorRecord<T> = Record<keyof T, string>;
+type ErrorRecord<T> = Partial<Record<keyof T, string>>;
 
 type Validations<T extends {}> = Partial<Record<keyof T, Validation>>;
 
@@ -25,7 +25,7 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
   onSubmit?: () => void;
 }) => {
   const [data, setData] = useState<T>((options?.initialValues || {}) as T);
-  const [errors, setErrors] = useState<ErrorRecord<T>>({} as ErrorRecord<T>);
+  const [errors, setErrors] = useState<ErrorRecord<T>>({});
 
   // Needs to extend unknown so we can add a generic to an arrow function
   const handleChange = <S extends unknown>(
@@ -44,7 +44,7 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
     const validations = options?.validations;
     if (validations) {
       let valid = true;
-      const newErrors = {} as ErrorRecord<T>;
+      const newErrors: ErrorRecord<T> = {};
       for (const key in validations) {
         const value = data[key];
         const validation = validations[key];
@@ -72,7 +72,7 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
       }
     }
 
-    setErrors({} as ErrorRecord<T>);
+    setErrors({});
 
     if (options?.onSubmit) {
       options.onSubmit();
